@@ -1,0 +1,23 @@
+*, *::after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 16px; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Nunito", sans-serif; }
+
+.header {
+  height: 100vh;
+  color: #f5f3ee;
+  text-shadow: 0 4px 0.5rem #0e0e0d;
+  background-image: linear-gradient(to right bottom, rgba(247, 225, 153, 0.3), rgba(246, 187, 9, 0.6)), url(../img/header.jpg);
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
