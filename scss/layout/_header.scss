@@ -1,12 +1,12 @@
 .header {
    height: 100vh;
    color: $color-white;
-   text-shadow: 0 4px .5rem $color-black; 
+   text-shadow: 0 4px .5rem rgba($color-black, .4); 
    background-image: 
         linear-gradient(
             to right bottom, 
             rgba($color-primary-light,.3),
-            rgba($color-primary-dark,.6)),
+            rgba($color-black,.1)),
         url(../img/header.jpg);
     background-size: cover;
     background-position: top;
@@ -16,3 +16,47 @@
     align-items: center;
 }
 
+.heading-text{
+    background-image: 
+        linear-gradient(
+            to right,
+            rgba($color-white, 0),
+            rgba($color-white,.4));
+
+    vertical-align: middle;
+    text-align: end;
+
+    font-size: 3rem;
+    font-weight: 300;
+
+    margin-right: 2rem;
+    padding: 2rem;
+
+
+    &--main {
+        background-image:linear-gradient(
+            to right,
+            rgba($color-primary-dark, .3),
+            rgba($color-primary,.7));
+
+        color: $color-white;
+        font-size: 6.5rem;
+        text-transform: uppercase;
+        letter-spacing: .8rem;
+        font-weight: 300;
+    }
+
+    &--sub {
+        background-image:linear-gradient(
+            to right,
+            rgba($color-primary-dark, .3),
+            rgba($color-primary,.7));
+
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        color: $color-white;
+        font-size: 3.5rem;  
+        font-weight: 400;
+        display: block;
+    }
+}
