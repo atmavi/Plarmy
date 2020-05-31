@@ -1,7 +1,7 @@
 .header {
    height: 100vh;
+   position: relative;
    color: $color-white;
-   text-shadow: 0 4px .5rem rgba($color-black, .4); 
    background-image: 
         linear-gradient(
             to right bottom, 
@@ -11,26 +11,43 @@
     background-size: cover;
     background-position: top;
 
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
+    &__btn {
+        position: absolute;
+
+        left: 10vw;
+        bottom: 15vh;
+
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        border: 1px solid $color-white;
+
+    }
+
+    &__text-box {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
-.heading-text{
+.heading-text {
+    width: 50vw;
+    height: 100vh;
     background-image: 
         linear-gradient(
             to right,
-            rgba($color-white, 0),
-            rgba($color-white,.4));
+            rgba($color-black, 0),
+            rgba($color-black,.4));
 
     vertical-align: middle;
     text-align: end;
+    text-shadow: 0 4px .5rem rgba($color-black, .4); 
 
     font-size: 3rem;
     font-weight: 300;
-
-    margin-right: 2rem;
-    padding: 2rem;
+    
+    padding: 2rem 2rem 0 0;
 
 
     &--main {
@@ -40,6 +57,7 @@
             rgba($color-primary,.7));
 
         color: $color-white;
+        
         font-size: 6.5rem;
         text-transform: uppercase;
         letter-spacing: .8rem;
