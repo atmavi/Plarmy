@@ -8,6 +8,13 @@ html {
 body {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  list-style: none; }
+
 body {
   font-family: "Nunito", sans-serif; }
 
@@ -39,7 +46,7 @@ body {
   width: 100%; }
 
 .header {
-  height: 100vh;
+  height: 90vh;
   position: relative;
   color: #f5f3ee;
   background-image: linear-gradient(to right bottom, rgba(200, 245, 124, 0.3), rgba(14, 14, 13, 0.1)), url(../img/header.jpg);
@@ -55,11 +62,12 @@ body {
     border: 1px solid #f5f3ee; }
   .header__text-box {
     display: flex;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    overflow: hidden; }
 
 .heading-text {
   width: 50vw;
-  height: 100vh;
+  height: 85vh;
   background-image: linear-gradient(to right, rgba(14, 14, 13, 0), rgba(14, 14, 13, 0.4));
   vertical-align: middle;
   text-align: end;
@@ -82,6 +90,31 @@ body {
     font-size: 3.5rem;
     font-weight: 400;
     display: block; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .75rem;
+  background-color: #68a009;
+  color: #f5f3ee; }
+  .nav__logo {
+    font-size: 2rem;
+    font-family: "Chelsea Market", cursive; }
+
+.user-nav {
+  display: flex;
+  justify-content: space-between; }
+  .user-nav__list {
+    font-size: 1.2rem; }
+  .user-nav__item {
+    height: 100%;
+    display: inline-block;
+    padding: 5px 7.5px; }
+    .user-nav__item:not(:last-child) {
+      margin-right: 4px; }
+    .user-nav__item:hover {
+      background-image: linear-gradient(to top, #96E50E, rgba(104, 160, 9, 0)); }
 
 .btn {
   padding: .5rem 1rem;
