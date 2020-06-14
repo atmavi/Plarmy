@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass:compile": "node-sass static/scss/main.scss static/css/style.css -w",
-    "react-serve": "cd front-end/react-gulaid && react-scripts start"
+    "react-serve": "cd react-gulaid && react-scripts start"
   },
   "keywords": [],
   "author": "",
