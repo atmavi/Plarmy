@@ -4,13 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:compile": "node-sass static/scss/main.scss static/css/style.css -w",
-    "react-serve": "cd react-gulaid && react-scripts start"
+    "sass:compile": "node-sass static/scss/main.scss static/css/style.css -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-sass": "^4.14.1"
-  }
+  "dependencies": {}
 }

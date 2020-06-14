@@ -7,7 +7,6 @@ function NavBar() {
       <nav class="nav">
          <a href="/" class="nav__logo">Gulaid</a>
          <UserNav />
-         <img src="./img/header.jpg" alt="" />
       </nav>
    )
 }

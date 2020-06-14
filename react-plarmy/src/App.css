@@ -1,0 +1,135 @@
+*, *::after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 16px; }
+
+body {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  list-style: none; }
+
+body {
+  font-family: "Nunito", sans-serif; }
+
+.d-block {
+  display: block !important; }
+
+.d-flex {
+  display: flex !important; }
+
+.d-grid {
+  display: grid !important; }
+
+.d-inline {
+  display: inline !important; }
+
+.d-inline-block {
+  display: inline-block !important; }
+
+.w-25 {
+  width: 25%; }
+
+.w-50 {
+  width: 50%; }
+
+.w-75 {
+  width: 75%; }
+
+.w-100 {
+  width: 100%; }
+
+.header {
+  height: 90vh;
+  position: relative;
+  color: #f5f3ee;
+  background-image: linear-gradient(to right bottom, rgba(225, 247, 188, 0.3), rgba(14, 14, 13, 0.1));
+  background-size: cover;
+  background-position: top; }
+  .header__btn {
+    position: absolute;
+    left: 10vw;
+    bottom: 15vh;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border: 1px solid #f5f3ee; }
+  .header__text-box {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden; }
+
+.heading-text {
+  width: 50vw;
+  height: 85vh;
+  background-image: linear-gradient(to right, rgba(14, 14, 13, 0), rgba(14, 14, 13, 0.4));
+  vertical-align: middle;
+  text-align: end;
+  text-shadow: 0 4px 0.5rem rgba(14, 14, 13, 0.4);
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 2rem 2rem 0 0; }
+  .heading-text--main {
+    background-image: linear-gradient(to right, rgba(104, 160, 9, 0.3), rgba(164, 223, 64, 0.7));
+    color: #f5f3ee;
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    letter-spacing: .8rem;
+    font-weight: 300; }
+  .heading-text--sub {
+    background-image: linear-gradient(to right, rgba(104, 160, 9, 0.3), rgba(164, 223, 64, 0.7));
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: #f5f3ee;
+    font-size: 3.5rem;
+    font-weight: 400;
+    display: block; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .75rem;
+  background-color: #68a009;
+  color: #f5f3ee; }
+  .nav__logo {
+    font-size: 2rem;
+    font-family: "Chelsea Market", cursive; }
+
+.user-nav {
+  display: flex;
+  justify-content: space-between; }
+  .user-nav__list {
+    font-size: 1rem; }
+  .user-nav__item {
+    height: 100%;
+    display: inline-block;
+    padding: 5px 7.5px; }
+    .user-nav__item:not(:last-child) {
+      margin-right: 4px; }
+    .user-nav__item:hover {
+      background-image: linear-gradient(to top, rgba(225, 247, 188, 0.4), rgba(104, 160, 9, 0));
+      color: #f5f3ee;
+      text-shadow: 1px 1px 2px #68a009, 0 0 1em #68a009, 0 0 0.2em #68a009; }
+
+.btn {
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .2s;
+  box-shadow: 0 3px 0.5rem rgba(245, 243, 238, 0.3); }
+  .btn:hover {
+    transform: translateY(-2px); }
+  .btn--primary {
+    color: #f5f3ee;
+    background-image: linear-gradient(to right bottom, #a4df40, #68a009); }
+  .btn--accent {
+    color: #f5f3ee;
+    background-image: linear-gradient(to right bottom, #ff5e00, #FF2700); }
