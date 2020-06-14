@@ -95,12 +95,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem .75rem;
+  padding: .75rem 1.5rem;
   background-color: #68a009;
   color: #f5f3ee; }
   .nav__logo {
     font-size: 2rem;
     font-family: "Chelsea Market", cursive; }
+  .nav__search-box {
+    flex: 0 1 5rem;
+    padding: .4rem .8rem;
+    border: none;
+    border-radius: 3rem;
+    background-color: #f2f2f2;
+    transition: all .2s; }
+    .nav__search-box:focus {
+      transform: scale(1.05);
+      background-color: #fff; }
 
 .user-nav {
   display: flex;

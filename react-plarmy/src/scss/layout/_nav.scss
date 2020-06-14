@@ -3,7 +3,7 @@
    justify-content: space-between;
    align-items: center;
 
-   padding: .5rem .75rem;
+   padding: .75rem 1.5rem;
 
    background-color:$color-primary-dark;
    color: $color-white;
@@ -12,7 +12,23 @@
       font-size: 2rem;
       font-family: $font-heading;
    }
+
+   &__search-box {
+      flex: 0 1 5rem;
+      padding: .4rem .8rem;
+      border: none;
+      border-radius: 3rem;
+      background-color: #f2f2f2;
+      transition: all .2s;
+
+      &:focus{
+         transform: scale(1.05);
+         background-color: #fff;
+      }
+   }
 }
+
+
 
 .user-nav {
    display: flex;
