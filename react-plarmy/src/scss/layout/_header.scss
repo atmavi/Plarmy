@@ -5,8 +5,9 @@
    background-image: 
         linear-gradient(
             to right bottom, 
-            rgba($color-primary-light,.3),
-            rgba($color-black,.1));
+            rgba($color-white,.2),
+            rgba($color-black,.1)),
+        url(./img/header.jpg);
     background-size: cover;
     background-position: top;
 
