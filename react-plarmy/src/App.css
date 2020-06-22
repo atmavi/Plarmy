@@ -49,7 +49,7 @@ body {
   height: 90vh;
   position: relative;
   color: #f5f3ee;
-  background-image: linear-gradient(to right bottom, rgba(225, 247, 188, 0.3), rgba(14, 14, 13, 0.1));
+  background-image: linear-gradient(to right bottom, rgba(245, 243, 238, 0.2), rgba(14, 14, 13, 0.1)), url(./img/header.jpg);
   background-size: cover;
   background-position: top; }
   .header__btn {
