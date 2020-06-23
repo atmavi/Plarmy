@@ -2,7 +2,18 @@ import React from 'react';
 
 function NavBar() {
    return (
-      <h1>This the login page</h1>
+      <div className="container">
+         <div className="login-box">
+            <div className="input-group">
+               <label htmlFor="login[username]" className="login__label">Username</label>
+               <input type="text" name="login[username]" id="login-username" />
+            </div>
+            <div className="input-group">
+               <label htmlFor="login[password]" className="login__label">Password</label>
+               <input type="text" name="login[username]" id="login-password" />
+            </div>
+         </div>
+      </div>
    )
 }
 
