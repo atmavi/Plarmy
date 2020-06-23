@@ -2,8 +2,8 @@ import React from 'react';
 
 function NavBar() {
    return (
-      <div className="container">
-         <div className="login-box">
+      <div className="login__container">
+         <div className="login__box">
             <div className="input-group">
                <label htmlFor="login[username]" className="login__label">Username</label>
                <input type="text" name="login[username]" id="login-username" />
