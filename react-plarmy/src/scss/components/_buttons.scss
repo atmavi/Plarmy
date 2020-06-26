@@ -23,11 +23,4 @@
       
    }
 
-   &--accent {
-      color: $color-white;
-      background-image: linear-gradient(
-            to right bottom, 
-            $color-accent-light,
-            $color-accent-dark)
-   }
 }
