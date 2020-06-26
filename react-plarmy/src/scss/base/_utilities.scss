@@ -35,3 +35,29 @@
 .w-100 {
    width: 100%;
 }
+
+//TEXT ALIGNMENT
+.text-left {
+   text-align: left;
+}
+
+.text-center {
+   text-align: center;
+}
+
+.text-right {
+   text-align: right;
+}
+
+//TEXT COLOR
+.text-primary-light {
+   color: $color-primary-light;
+}
+
+.text-primary {
+   color: $color-primary;
+}
+
+.text-primary-dark {
+   color: $color-primary-dark;
+}
