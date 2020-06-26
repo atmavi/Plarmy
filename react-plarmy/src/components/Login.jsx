@@ -11,11 +11,10 @@ function NavBar() {
             </div>
             <div className="input-group">
                <label htmlFor="login[password]" className="login__label">Password</label>
-               <input type="text" name="login[username]" id="login-password" />
+               <input type="text" name="login[password]" id="login-password" />
             </div>
             <button className="btn btn--primary login__btn d-block w-100">Login</button>
          </form>
-
       </div>
    )
 }
