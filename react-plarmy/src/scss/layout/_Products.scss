@@ -1,7 +1,7 @@
 .products {
    display: grid;
    padding:  1rem 3vw;
-   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
    grid-gap: .5vw;
 }
 
