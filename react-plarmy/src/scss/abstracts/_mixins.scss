@@ -1,3 +1,7 @@
 @mixin reset-list {
    list-style: none;
 }
+
+@mixin shadow {
+   box-shadow: 0 .4rem .5rem rgba($color-black, .3);
+}
