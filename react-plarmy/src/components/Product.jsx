@@ -1,6 +1,8 @@
 import React from 'react';
+import QuantityBtns from './QuatityBtns';
 
-const Product = () => {
+const Product = props => {
+   const { img, name, price } = props;
    return (
       <div className="product">
          <img
@@ -9,12 +11,10 @@ const Product = () => {
          />
          <div className="product__details">
             <h3 className="product__name">Name</h3>
-            <p className="product__price">PHP 30.00</p>
-            <div className="quantity-wrapper">
-               <span className="quantity-wrapper__btn">-</span>
-               <input className="quantity-wrapper__input" type="text" />
-               <span className="quantity-wrapper__btn">+</span>
-            </div>
+            <p className="product__price">PHP
+               <span>30.00</span>
+            </p>
+            <QuantityBtns />
             <button className="product__btn btn btn--primary d-block w-100 m-1">Add to Cart</button>
          </div>
       </div>
