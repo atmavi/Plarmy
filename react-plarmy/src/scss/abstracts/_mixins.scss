@@ -2,6 +2,10 @@
    list-style: none;
 }
 
-@mixin shadow {
+@mixin shadow-dark {
    box-shadow: 0 .4rem .5rem rgba($color-black, .3);
+}
+
+@mixin shadow-light {
+   box-shadow: 0 .2rem .2rem rgba($color-black, .2);
 }
