@@ -16,12 +16,22 @@
    }
 
    &__name {
+      font-weight: 100;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
 
    }
 
    &__price {
-
-   }
+      margin-top: .5rem;
+      
+      & span{
+         margin-left: 1rem;
+         font-size: 1.5rem;
+         font-weight: 100;
+         color: $color-black;
+      }
+   }  
 
    &__quantity-wrapper {
       
