@@ -1,10 +1,14 @@
 .product {
-   @include shadow;
-
+   @include shadow-light;
    border-radius: 3px;
    overflow: hidden;
    margin-bottom: 1rem;
    text-align: center;
+   transition: all .3s;
+
+   &:hover {
+      @include shadow-dark;
+   }
 
 
    &__details {
@@ -12,14 +16,15 @@
    }
 
    &__img {
-      width: 100%;
+      object-fit: scale-down;
+      height: 30vh;
    }
 
    &__name {
       font-weight: 100;
       font-size: 1.1rem;
       letter-spacing: 2px;
-
+      text-transform: uppercase;
    }
 
    &__price {
