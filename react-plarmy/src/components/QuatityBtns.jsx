@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const QuantityBtns = () => {
+   const [value, setValue] = useState(0);
+   const incrementValue = () => {
+      setValue(value + 1);
+   }
+
+   const decrementValue = () => {
+      setValue(value <= 0 ? 0 : value - 1)
+   }
 
    return (
       <div className="quantity__wrapper">
-         <span className="quantity__btn quantity__btn--minus">-</span>
-         <input className="quantity__input" type="text" />
-         <span className="quantity__btn quantity__btn--plus">+</span>
+         <button
+            className="quantity__btn quantity__btn--minus"
+            onClick={decrementValue}>
+            -
+            </button>
+         <input className="quantity__input" type="text" value={value} />
+         <button
+            className="quantity__btn quantity__btn--plus"
+            onClick={incrementValue}>
+            +
+         </button>
       </div>
    )
 }
