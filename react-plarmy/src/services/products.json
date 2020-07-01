@@ -1,0 +1,58 @@
+[
+   {
+      "id": 1,
+      "name": "orange",
+      "price": 40,
+      "sellVolume": "per piece",
+      "img": "react-plarmy/src/img/products/orange.png",
+      "type": "fruit"
+   },
+   {
+      "id": 2,
+      "name": "mango",
+      "price": 100,
+      "sellVolume": "per kilo",
+      "img": "react-plarmy/src/img/products/mango.png",
+      "type": "fruit"
+   },
+   {
+      "id": 3,
+      "name": "pineapple",
+      "price": 65,
+      "sellVolume": "per piece",
+      "img": "react-plarmy/src/img/products/pineapple.png",
+      "type": "fruit"
+   },
+   {
+      "id": 4,
+      "name": "carrot",
+      "price": 60,
+      "sellVolume": "per kilo",
+      "img": "react-plarmy/src/img/products/carrot.png",
+      "type": "vegetable"
+   },
+   {
+      "id": 5,
+      "name": "bell pepper",
+      "price": 40,
+      "sellVolume": "per kilo",
+      "img": "react-plarmy/src/img/products/bellpepper.png",
+      "type": "vegetable"
+   },
+   {
+      "id": 6,
+      "name": "eggplant",
+      "price": 30,
+      "sellVolume": "per kilo",
+      "img": "react-plarmy/src/img/products/eggplant.png",
+      "type": "vegetable"
+   },
+   {
+      "id": 7,
+      "name": "pork",
+      "price": 120,
+      "sellVolume": "per kilo",
+      "img": "react-plarmy/src/img/products/pork.png",
+      "type": "other"
+   }
+]
