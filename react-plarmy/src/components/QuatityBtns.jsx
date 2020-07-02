@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 
 const QuantityBtns = () => {
    const [value, setValue] = useState(0);
+
+   const onChangeValue = e => {
+      setValue(e.target.value);
+   }
+
    const incrementValue = () => {
-      setValue(value + 1);
+      setValue(value >= 0 ? parseInt(value) + 1 : 1);
    }
 
    const decrementValue = () => {
@@ -17,7 +22,11 @@ const QuantityBtns = () => {
             onClick={decrementValue}>
             -
             </button>
-         <input className="quantity__input" type="text" value={value} />
+         <input
+            className="quantity__input"
+            type="text"
+            value={value}
+            onChange={onChangeValue} />
          <button
             className="quantity__btn quantity__btn--plus"
             onClick={incrementValue}>
