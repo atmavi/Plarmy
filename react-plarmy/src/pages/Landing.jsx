@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Landing = () => {
    return (
       <header className="header">
@@ -10,7 +10,9 @@ const Landing = () => {
                <span className="heading-text--sub">fruits and vegetables</span>
                laid for you
             </h1>
-            <a href="/" className="btn btn--primary header__btn">Shop Now!</a>
+
+            <Link to="/products" className="btn btn--primary header__btn">Shop Now!</Link>
+            {/* <a href="/" className="btn btn--primary header__btn">Shop Now!</a> */}
          </div>
       </header>
    );
