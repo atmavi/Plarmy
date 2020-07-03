@@ -2,17 +2,20 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import './App.css';
 
 import './css/Style.css';
 
 import Navbar from './components/Navs/Navbar';
-import Landing from './pages/Landing';
 import Footer from './components/Footer';
+
+//PAGES
 import Login from './components/Login';
+import Landing from './pages/Landing';
+import Products from './pages/Products';
+import ViewProduct from './pages/ViewProduct';
 
 function App() {
   return (
@@ -26,6 +29,12 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/products/:id">
+            <ViewProduct />
+          </Route>
+          <Route path="/products">
+            <Products />
           </Route>
         </Switch>
       </Router>

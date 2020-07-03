@@ -12,7 +12,6 @@ const Landing = () => {
             </h1>
 
             <Link to="/products" className="btn btn--primary header__btn">Shop Now!</Link>
-            {/* <a href="/" className="btn btn--primary header__btn">Shop Now!</a> */}
          </div>
       </header>
    );
