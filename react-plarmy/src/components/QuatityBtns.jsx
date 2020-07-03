@@ -12,7 +12,7 @@ const QuantityBtns = () => {
    }
 
    const decrementValue = () => {
-      setValue(value <= 0 ? 0 : value - 1)
+      setValue(value <= 0 ? 0 : parseInt(value) - 1);
    }
 
    return (
@@ -21,7 +21,7 @@ const QuantityBtns = () => {
             className="quantity__btn quantity__btn--minus"
             onClick={decrementValue}>
             -
-            </button>
+         </button>
          <input
             className="quantity__input"
             type="text"
