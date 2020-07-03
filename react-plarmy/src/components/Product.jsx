@@ -1,18 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import QuantityBtns from './QuatityBtns';
 
 const Product = props => {
-   const { img, name, price } = props;
+   const { id, img, name, price } = props.product;
+
    return (
       <div className="product">
-         <img
-            className="product__img"
-            src="https://images.pexels.com/photos/708777/pexels-photo-708777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-         />
+         <Link to={`/products/${id}`}>
+            <img
+               className="product__img"
+               alt={name}
+               src={img}
+            />
+         </Link>
          <div className="product__details">
-            <h3 className="product__name">Name</h3>
+            <h3 className="product__name">{name}</h3>
             <p className="product__price">PHP
-               <span>30.00</span>
+               <span>{price}</span>
             </p>
             <QuantityBtns />
             <button className="product__btn btn btn--primary d-block w-100 m-1">Add to Cart</button>
