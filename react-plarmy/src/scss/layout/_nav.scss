@@ -5,7 +5,7 @@
 
    padding: .75rem 1.5rem;
 
-   background-color:$color-primary-dark;
+   @include linear-gradient-primary;
    color: $color-white;
 
    &__logo {

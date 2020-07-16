@@ -18,10 +18,7 @@
 
    &--primary {
       color: $color-white;
-      background-image: linear-gradient(
-            to right bottom, 
-            $color-primary,
-            $color-primary-dark)
+      @include linear-gradient-primary;
    }
    
 

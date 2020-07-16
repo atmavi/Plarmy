@@ -1,8 +1,7 @@
 .footer{
    padding: 1rem 2rem;
-   background-image: linear-gradient(
-      
-   );
+   @include linear-gradient-primary;
+   color: $color-white;
 
    &__logo {
       height: 100%;
