@@ -9,3 +9,10 @@
 @mixin shadow-light {
    box-shadow: 0 .2rem .2rem rgba($color-black, .2);
 }
+
+@mixin linear-gradient-primary {
+   background-image: linear-gradient(
+            to right bottom, 
+            $color-primary,
+            $color-primary-dark);
+}
