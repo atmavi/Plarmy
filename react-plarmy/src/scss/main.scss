@@ -12,6 +12,7 @@
 @import './layout/nav';
 @import './layout/Products';
 @import './layout/view-product';
+@import './layout/footer';
 
 @import './pages/landing';
 @import './pages/login';
@@ -19,4 +20,5 @@
 @import './components/buttons';
 @import './components/input-group';
 @import './components/product';
-@import './components/quantity-btns'
+@import './components/quantity-btns';
+@import './components/footer';
