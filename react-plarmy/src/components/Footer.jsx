@@ -1,10 +1,13 @@
 import React from 'react';
 
 function Footer() {
+   const year = new Date().getFullYear();
+
    return (
       <footer className="footer">
          <div className="footer__logo">
             Plarmy
+            <div className="footer__copywrite">©{year} Plarmy. All Rights Reserved.</div>
          </div>
 
          <div class="footer__navigation">
