@@ -1,7 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
 const app = express();
+
+app.use((req, res, next) => {
+   res.setHeader('Access-Control-Allow-Origin', '*');
+   res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
+   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+   next();
+})
 
 mongoose
    .connect('mongodb://localhost/api-plarmy', {
@@ -29,12 +35,12 @@ const productSchema = mongoose.Schema({
 
 const Product = mongoose.model('Product', productSchema);
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
    res.json('Home');
 });
 
 //GET ALL PRODUCTS
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
    Product.find({}, (err, products) => {
       if (err) {
          res.json("Something went wrong");
@@ -45,7 +51,7 @@ app.get('/products', (req, res) => {
 });
 
 //CREATE PRODUCTS
-app.post('/products', (req, res) => {
+app.post('/api/products', (req, res) => {
    Product.create(
       //Test data only will soon be deleted
       {
@@ -65,7 +71,7 @@ app.post('/products', (req, res) => {
 });
 
 //SHOW A PRODUCT
-app.get('/products/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
    Product.findById(req.params.id, (err, product) => {
       if (err) {
          console.log(err);
@@ -76,7 +82,7 @@ app.get('/products/:id', (req, res) => {
 });
 
 //UPDATE
-app.put('/products/:id', (req, res) => {
+app.put('/api/products/:id', (req, res) => {
    Product.findByIdAndUpdate(req.params.id, {}, (err, product) => {
       if (err) {
          console.log(err);
@@ -87,7 +93,7 @@ app.put('/products/:id', (req, res) => {
 });
 
 //DELETE
-app.delete('/products/:id', (req, res) => {
+app.delete('/api/products/:id', (req, res) => {
    Product.findByIdAndRemove(req.params.id, (err) => {
       if (err) {
          res.json(err);
