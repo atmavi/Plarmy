@@ -10,13 +10,13 @@ function Footer() {
             <div className="footer__copywrite">©{year} Plarmy. All Rights Reserved.</div>
          </div>
 
-         <div class="footer__navigation">
-            <ul class="footer__list">
-               <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
-               <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
-               <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
-               <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
-               <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+         <div className="footer__navigation">
+            <ul className="footer__list">
+               <li className="footer__item"><a href="#" className="footer__link">Company</a></li>
+               <li className="footer__item"><a href="#" className="footer__link">Contact us</a></li>
+               <li className="footer__item"><a href="#" className="footer__link">Carrers</a></li>
+               <li className="footer__item"><a href="#" className="footer__link">Privacy policy</a></li>
+               <li className="footer__item"><a href="#" className="footer__link">Terms</a></li>
             </ul>
          </div>
       </footer>
