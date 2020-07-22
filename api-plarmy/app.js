@@ -26,11 +26,13 @@ mongoose
 
 //CONFIG SCHEMA
 const productSchema = mongoose.Schema({
-   title: String,
-   image: String,
+   name: String,
    price: Number,
+   sellVolume: String,
+   image: String,
    author: String,
-   entered: { type: Date, default: Date.now }
+   type: String,
+   enteredAt: { type: Date, default: Date.now }
 });
 
 const Product = mongoose.model('Product', productSchema);
@@ -54,11 +56,23 @@ app.get('/api/products', (req, res) => {
 app.post('/api/products', (req, res) => {
    Product.create(
       //Test data only will soon be deleted
+      // {
+      //    name: 'Orange',
+      //    image: './img/products/orange.png',
+      //    price: 30.20,
+      //    author: 'Me',
+      // },
+
       {
-         title: 'Orage',
-         image: 'https://images.pexels.com/photos/42059/citrus-diet-food-fresh-42059.jpeg?auto=compress&cs=tinysrgb&h=350',
-         price: 30.20,
+         name: 'Orange',
+         price: 100,
+         sellVolume: 'per kilo',
+         image: './img/products/orange.png',
          author: 'Me',
+         type: 'fruit',
+         entered: {
+            type: Date, default: Date.now
+         }
       },
       (err, newProduct) => {
          if (err) {

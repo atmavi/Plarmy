@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 import QuantityBtns from './QuatityBtns';
 
 const Product = props => {
-   const { id, img, name, price } = props.product;
+   const { _id, image, name, price } = props.product;
 
    return (
       <div className="product">
-         <Link to={`/products/${id}`}>
+         <Link to={`/products/${_id}`}>
             <img
                className="product__img"
                alt={name}
-               src={img}
+               src={image}
             />
          </Link>
          <div className="product__details">
