@@ -10,12 +10,12 @@ const Products = () => {
    useEffect(() => {
       getAllProducts()
          .then(data => setProducts(data))
-   })
+   }, [])
 
    return (
       <div className="products">
          {products.map(product =>
-            (<Product product={product} key={product.id} />)
+            (<Product product={product} key={product._id} />)
          )}
       </div>
    );
