@@ -42,21 +42,13 @@ exports.detail = (req, res) => {
 
 exports.update = (req, res) => {
    Product.findByIdAndUpdate(req.params.id, {}, (err, product) => {
-      if (err) {
-         console.log(err);
-      } else {
-         res.json(product)
-      }
+      res.json(err ? "Something went wrong" : product);
    });
 };
 
 exports.delete = (req, res) => {
    Product.findByIdAndRemove(req.params.id, (err) => {
-      if (err) {
-         res.json(err);
-      } else {
-         res.json('Product has been deleted.');
-      }
+      res.json(err ? "Something went wrong" : "Product has been deleted.");
    });
 };
 
