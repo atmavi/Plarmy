@@ -7,11 +7,7 @@ exports.home = (req, res) => {
 
 exports.list = (req, res) => {
    Product.find({}, (err, products) => {
-      if (err) {
-         res.json("Something went wrong");
-      } else {
-         res.json(products);
-      }
+      res.json(err ? "Something went wrong" : products);
    });
 };
 
