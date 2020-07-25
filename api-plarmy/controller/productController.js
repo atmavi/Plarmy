@@ -36,11 +36,7 @@ exports.add = (req, res) => {
 
 exports.detail = (req, res) => {
    Product.findById(req.params.id, (err, product) => {
-      if (err) {
-         console.log(err);
-      } else {
-         res.json(product)
-      }
+      res.json(err ? "Something went wrong" : product);
    });
 };
 
