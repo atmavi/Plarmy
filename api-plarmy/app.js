@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+
 const app = express();
 
 app.use((req, res, next) => {
@@ -7,7 +8,10 @@ app.use((req, res, next) => {
    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
    next();
-})
+});
+
+//MODELS 
+const Product = require('./model/product');
 
 mongoose
    .connect('mongodb://localhost/api-plarmy', {
@@ -23,22 +27,8 @@ mongoose
       console.log("ERROR:" + err.message);
    });
 
-
-//CONFIG SCHEMA
-const productSchema = mongoose.Schema({
-   name: String,
-   price: Number,
-   sellVolume: String,
-   image: String,
-   author: String,
-   type: String,
-   enteredAt: { type: Date, default: Date.now }
-});
-
-const Product = mongoose.model('Product', productSchema);
-
 app.get('/api', (req, res) => {
-   res.json('Home');
+   res.redirect('/api/products');
 });
 
 //GET ALL PRODUCTS
@@ -55,14 +45,6 @@ app.get('/api/products', (req, res) => {
 //CREATE PRODUCTS
 app.post('/api/products', (req, res) => {
    Product.create(
-      //Test data only will soon be deleted
-      // {
-      //    name: 'Orange',
-      //    image: './img/products/orange.png',
-      //    price: 30.20,
-      //    author: 'Me',
-      // },
-
       {
          name: 'Orange',
          price: 100,
