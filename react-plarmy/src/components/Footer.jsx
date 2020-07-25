@@ -12,11 +12,11 @@ function Footer() {
 
          <div className="footer__navigation">
             <ul className="footer__list">
-               <li className="footer__item"><a href="#" className="footer__link">Company</a></li>
-               <li className="footer__item"><a href="#" className="footer__link">Contact us</a></li>
-               <li className="footer__item"><a href="#" className="footer__link">Carrers</a></li>
-               <li className="footer__item"><a href="#" className="footer__link">Privacy policy</a></li>
-               <li className="footer__item"><a href="#" className="footer__link">Terms</a></li>
+               <li className="footer__item"><a href="/" className="footer__link">Company</a></li>
+               <li className="footer__item"><a href="/" className="footer__link">Contact us</a></li>
+               <li className="footer__item"><a href="/" className="footer__link">Carrers</a></li>
+               <li className="footer__item"><a href="/" className="footer__link">Privacy policy</a></li>
+               <li className="footer__item"><a href="/" className="footer__link">Terms</a></li>
             </ul>
          </div>
       </footer>
