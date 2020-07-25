@@ -114,7 +114,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: .75rem 1.5rem;
-  background-color: #009253;
+  background-image: linear-gradient(to right bottom, #00C955, #009253);
   color: #f5f3ee; }
   .nav__logo {
     font-size: 2rem;
@@ -202,6 +202,10 @@ body {
     letter-spacing: .1rem; }
   .view-product__warning {
     font-size: .7rem; }
+
+.footer {
+  display: flex;
+  justify-content: space-between; }
 
 .login__container {
   display: flex;
@@ -323,3 +327,26 @@ form > input[type="text"] {
   width: 70%;
   border: 1px solid #A7ADBA;
   text-align: center; }
+
+.footer {
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right bottom, #00C955, #009253);
+  color: #f5f3ee; }
+  .footer__logo {
+    height: 100%;
+    font-size: 4rem; }
+  .footer__copywrite {
+    font-size: .7rem; }
+  .footer__navigation {
+    display: flex;
+    align-items: flex-end; }
+  .footer__list {
+    display: flex;
+    margin-top: auto; }
+  .footer__item {
+    margin: .5rem 1.25rem;
+    transition: all .3s;
+    padding: .5rem 1rem;
+    border-radius: 3px; }
+    .footer__item:hover {
+      transform: translateY(-2px) scale(1.05); }
