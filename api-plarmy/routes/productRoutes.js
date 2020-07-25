@@ -1,16 +1,22 @@
-app.get('/api', product_controller.home);
+const router = require('express').Router();
+const product_controller = require('../controllers/productController');
+
+router.get('/', product_controller.home);
 
 //GET ALL PRODUCTS
-app.get('/api/products', product_controller.list);
+router.get('/products', product_controller.list);
 
 //CREATE PRODUCTS
-app.post('/api/products', product_controller.add);
+router.post('/products', product_controller.add);
 
 //SHOW A PRODUCT
-app.get('/api/products/:id', product_controller.detail);
+router.get('/products/:id', product_controller.detail);
 
 //UPDATE
-app.put('/api/products/:id', product_controller.update);
+router.put('/products/:id', product_controller.update);
 
 //DELETE
-app.delete('/api/products/:id', product_controller.delete);
+router.delete('/products/:id', product_controller.delete);
+
+
+module.exports = router;
