@@ -10,6 +10,8 @@ app.use((req, res, next) => {
    next();
 });
 
+app.use(express.json());
+
 //MODELS 
 const Product = require('./models/product');
 
