@@ -36,6 +36,10 @@ mongoose
 
 app.use('/api', productRoutes);
 
+app.post('/api/login', (req, res) => {
+   console.log(req.body);
+});
+
 app.listen(4000, () => {
    console.log('App has started on port 4000');
 });
