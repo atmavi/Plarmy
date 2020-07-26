@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function NavBar() {
+function Login() {
    const [username, setUsername] = useState('');
    const [password, setPassword] = useState('');
 
@@ -20,7 +20,6 @@ function NavBar() {
          .then(res => console.log(res))
          .catch(err => console.log(err))
    }
-
    return (
       <div className="login__container">
          <form
@@ -38,7 +37,7 @@ function NavBar() {
             <div className="input-group">
                <label htmlFor="login[password]" className="login__label">Password</label>
                <input
-                  type="text"
+                  type="password"
                   name="login[password]"
                   id="login-password"
                   onChange={handlePasswordChange}
@@ -50,4 +49,4 @@ function NavBar() {
    )
 }
 
-export default NavBar;
+export default Login;
