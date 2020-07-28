@@ -1,0 +1,24 @@
+{
+  "name": "plarmy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all --parallel start-*",
+    "start-react": "cd react-plarmy && npm start && cd..",
+    "start-api": "cd api-plarmy && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atmavi/Plarmy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atmavi/Plarmy/issues"
+  },
+  "homepage": "https://github.com/atmavi/Plarmy#readme",
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
