@@ -18,7 +18,5 @@
     "url": "https://github.com/atmavi/Plarmy/issues"
   },
   "homepage": "https://github.com/atmavi/Plarmy#readme",
-  "devDependencies": {
-    "concurrently": "^5.2.0"
-  }
+  "devDependencies": {}
 }
