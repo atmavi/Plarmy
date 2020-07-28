@@ -40,6 +40,8 @@ const ViewProduct = () => {
             <span className="view-product__warning">
                * Picture/s may vary from actual product.
             </span>
+
+            <button className="btn btn--primary mt-2">Add to Cart</button>
          </div>
       </div>
    );
