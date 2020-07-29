@@ -16,6 +16,7 @@ import Login from './components/Login';
 import Landing from './pages/Landing';
 import Products from './pages/Products';
 import ViewProduct from './pages/ViewProduct';
+import EditProduct from './pages/EditProduct';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route exact path="/products/:id/edit">
+            <EditProduct />
           </Route>
           <Route path="/products/:id">
             <ViewProduct />
