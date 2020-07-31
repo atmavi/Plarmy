@@ -6,23 +6,18 @@ function EditProduct() {
       <div className="edit-product">
          <h1>Edit Product</h1>
          <Formik
-            initialValues={{ email: '', password: '', test: '' }}
+            initialValues={{ name: '', price: '', sellVolume: '', image: '', author: '', type: '' }}
             validate={values => {
                const errors = {};
-               if (!values.email) {
-                  errors.email = 'Required';
-               } else if (
-                  !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-               ) {
-                  errors.email = 'Invalid email address';
+               if (!values.name) {
+                  errors.name = 'Required';
                }
                return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
                setTimeout(() => {
-                  console.log(values)
+                  console.log(values);
                   setSubmitting(false);
-
                }, 400);
             }}
          >
@@ -33,6 +28,7 @@ function EditProduct() {
                      className="form__name"
                      name="name"
                   />
+                  <ErrorMessage name="name" component="div" />
 
                   <label className="form__label" htmlFor="price">Price</label>
                   <Field
@@ -43,7 +39,7 @@ function EditProduct() {
                   <label className="form__label" htmlFor="sell-volume">Selling volume</label>
                   <Field
                      className="form__sell-volume"
-                     name="sell-volume"
+                     name="sellVolume"
                   />
 
                   <label className="form__label" htmlFor="image">Image</label>
@@ -81,7 +77,6 @@ function EditProduct() {
             )}
          </Formik>
       </div >
-
    )
 }
 
