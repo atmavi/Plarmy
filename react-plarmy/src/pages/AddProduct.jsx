@@ -42,13 +42,16 @@ function AddProduct() {
                      className="form__name"
                      name="name" />
                   {errors.name && touched.name && (
-                     <div><ErrorMessage name="name" component="span" className="error-message" /></div>
+                     <ErrorMessage name="name" component="span" className="error-message" />
                   )}
 
                   <label className="form__label" htmlFor="price">Price</label>
                   <Field
                      className="form__price"
                      name="price" />
+                  {errors.price && touched.price && (
+                     <ErrorMessage name="price" component="span" className="error-message" />
+                  )}
 
                   <label className="form__label" htmlFor="sell-volume">Selling volume</label>
                   <Field
