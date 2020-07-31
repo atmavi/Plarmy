@@ -12,26 +12,14 @@ exports.list = (req, res) => {
 };
 
 exports.add = (req, res) => {
-   Product.create(
-      {
-         name: 'Orange',
-         price: 100,
-         sellVolume: 'per kilo',
-         image: './img/products/orange.png',
-         author: 'Me',
-         type: 'fruit',
-         entered: {
-            type: Date, default: Date.now
-         }
-      },
-      (err, newProduct) => {
-         if (err) {
-            console.log(err);
-         } else {
-            console.log(newProduct);
-            res.json(newProduct)
-         }
-      });
+   Product.create(req.body, (err, newProduct) => {
+      if (err) {
+         console.log(err);
+      } else {
+         console.log(newProduct);
+         res.json(newProduct)
+      }
+   });
 };
 
 exports.detail = (req, res) => {
