@@ -1,0 +1,38 @@
+.form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+
+   & > * {
+      display: block;
+      width: 60%;
+   }
+
+   & input {
+      border: 1px solid $color-primary-dark;
+      padding: .5rem .75rem;
+
+      margin-top: .3rem;
+      border-radius: 3px;
+
+      transition: box-shadow .4s;
+
+      &:focus {
+         box-shadow: 3px 3px 0 rgba($color-primary, .3);
+         outline: none;
+      }
+   }
+
+   &__btn {
+      font-size: 1.2rem;
+   }
+
+   &__label {
+      text-transform: capitalize;
+      color: $color-black;
+      font-size: .8rem;
+
+      margin-top: 1rem;
+   }
+}
