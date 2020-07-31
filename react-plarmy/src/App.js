@@ -10,13 +10,14 @@ import './css/Style.css';
 
 import Navbar from './components/Navs/Navbar';
 import Footer from './components/Footer';
+import Login from './components/Login';
 
 //PAGES
-import Login from './components/Login';
 import Landing from './pages/Landing';
 import Products from './pages/Products';
 import ViewProduct from './pages/ViewProduct';
 import EditProduct from './pages/EditProduct';
+import AddProduct from './pages/AddProduct';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/products/:id/edit">
             <EditProduct />
+          </Route>
+          <Route exact path="/products/add">
+            <AddProduct />
           </Route>
           <Route path="/products/:id">
             <ViewProduct />
