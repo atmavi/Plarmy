@@ -27,22 +27,60 @@ function EditProduct() {
             }}
          >
             {({ isSubmitting }) => (
-               <Form>
-                  <Field type="text" name="email" />
-                  <ErrorMessage name="email" component="div" />
-                  <Field type="password" name="password" />
-                  <ErrorMessage name="password" component="div" />
+               <div className="edit-product">
+                  <Form className="edit-product__form">
+                     <label htmlFor="name">Name</label>
+                     <Field
+                        className="edit-product__name"
+                        name="name"
+                     />
 
-                  <Field type="text" name="test" />
-                  <ErrorMessage name="test" component="div" />
+                     <label htmlFor="price">Price</label>
+                     <Field
+                        className="edit-product__price"
+                        name="price"
+                     />
 
-                  <button type="submit" disabled={isSubmitting}>
-                     Submit
-                  </button>
-               </Form>
+                     <label htmlFor="sell-volume">Selling volume</label>
+                     <Field
+                        className="edit-product__sell-volume"
+                        name="sell-volume"
+                     />
+
+                     <label htmlFor="image">Image</label>
+                     <Field
+                        className="edit-product__image"
+                        name="image"
+                     />
+
+                     <label htmlFor="author">Author</label>
+                     <Field
+                        className="edit-product__author"
+                        name="author"
+                     />
+
+                     <label htmlFor="type">type</label>
+                     <Field
+                        className="edit-product__type"
+                        name="type"
+                     />
+
+
+
+
+
+                     {/* <Field type="text" name="email" />
+                     <ErrorMessage name="email" component="div" />
+                     <Field type="password" name="password" />
+                     <ErrorMessage name="password" component="div" /> */}
+                     <button type="submit" disabled={isSubmitting}>
+                        Submit
+                     </button>
+                  </Form>
+               </div>
             )}
          </Formik>
-      </div>
+      </div >
 
    )
 }
