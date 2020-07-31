@@ -21,7 +21,7 @@ const Product = props => {
                <span>{price}</span>
             </p>
             <QuantityBtns />
-            <button className="product__btn btn btn--primary d-block w-100 m-1">Add to Cart</button>
+            <button className="product__btn btn btn--primary d-block w-100">Add to Cart</button>
          </div>
       </div>
    );
