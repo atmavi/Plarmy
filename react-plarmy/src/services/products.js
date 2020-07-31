@@ -10,8 +10,14 @@ export const getAllProducts = () => {
 }
 
 export const getProduct = id => {
-   console.log(id)
    const res = axios.get(url + '/products/' + id)
+      .then(res => res.data)
+      .catch(err => err)
+   return res;
+}
+
+export const addProduct = product => {
+   const res = axios.post(`${url}/products/`, product)
       .then(res => res.data)
       .catch(err => err)
    return res;
