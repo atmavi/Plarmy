@@ -293,6 +293,11 @@ ml4 {
   border: none;
   font-size: 1.2rem; }
 
+.edit-product {
+  padding: 3rem 5rem;
+  display: flex;
+  flex-direction: column; }
+
 .btn {
   padding: .5rem 1rem;
   border: none;
@@ -411,3 +416,27 @@ form > input[type="text"] {
     border-radius: 3px; }
     .footer__item:hover {
       transform: translateY(-2px) scale(1.05); }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .form > * {
+    display: block;
+    width: 60%; }
+  .form input {
+    border: 1px solid #009253;
+    padding: .5rem .75rem;
+    margin-top: .3rem;
+    border-radius: 3px;
+    transition: box-shadow .4s; }
+    .form input:focus {
+      box-shadow: 3px 3px 0 rgba(0, 201, 85, 0.3);
+      outline: none; }
+  .form__btn {
+    font-size: 1.2rem; }
+  .form__label {
+    text-transform: capitalize;
+    color: #221f1f;
+    font-size: .8rem;
+    margin-top: 1rem; }
