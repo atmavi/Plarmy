@@ -2,6 +2,8 @@ import React from 'react';
 import * as Yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
+import { addProduct } from '../services/products';
+
 
 const ProductSchema = Yup.object().shape({
    name: Yup.string()
@@ -29,21 +31,9 @@ function AddProduct() {
             validationSchema={ProductSchema}
             onSubmit={values => {
                console.log(values);
+               addProduct(values)
+                  .then(res => alert('Success'))
             }}
-
-         // validate={values => {
-         //    const errors = {};
-         //    if (!values.name) {
-         //       errors.name = 'Required';
-         //    }
-         //    return errors;
-         // }}
-         // onSubmit={(values, { setSubmitting }) => {
-         //    setTimeout(() => {
-         //       console.log(values);
-         //       setSubmitting(false);
-         //    }, 400);
-         // }}
          >
             {({ errors, touched }) => (
                <Form className="form">
