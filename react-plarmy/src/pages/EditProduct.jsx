@@ -11,34 +11,21 @@ function EditProduct() {
 
    useEffect(() => {
       getProduct(id)
-         .then(data => {
-            const {
-               name,
-               price,
-               sellVolume,
-               image,
-               author,
-               type
-            } = data;
-
-            let productDetails = {
-               name,
-               price,
-               sellVolume,
-               image,
-               author,
-               type
-            }
-            setDetails(productDetails)
-         })
+         .then(data => setDetails(data))
    }, [id]);
-
 
    return (
       <div className="edit-product">
          <h1>Edit Product</h1>
          <Formik
-            initialValues={details}
+            // initialValues={{
+            //    name,
+            //    price,
+            //    sellVolume,
+            //    image,
+            //    author,
+            //    type
+            // }}
             validationSchema={ProductSchema}
             onSubmit={values => {
                console.log(values)
@@ -50,6 +37,7 @@ function EditProduct() {
                   <Field
                      className="form__name"
                      name="name"
+                     value={details.name}
                   />
                   {errors.name && touched.name && (
                      <ErrorMessage name="name" component="span" className="error-message" />
