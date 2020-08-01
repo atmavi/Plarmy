@@ -1,34 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { ProductSchema } from '../schema/product';
+import { getProduct } from '../services/products';
+
 
 function EditProduct() {
+   let { id } = useParams();
+   const [details, setDetails] = useState({});
+
+   useEffect(() => {
+      getProduct(id)
+         .then(data => {
+            const {
+               name,
+               price,
+               sellVolume,
+               image,
+               author,
+               type
+            } = data;
+
+            let productDetails = {
+               name,
+               price,
+               sellVolume,
+               image,
+               author,
+               type
+            }
+            setDetails(productDetails)
+         })
+   }, [id]);
+
+
    return (
       <div className="edit-product">
          <h1>Edit Product</h1>
          <Formik
-            initialValues={{ name: '', price: '', sellVolume: '', image: '', author: '', type: '' }}
-            validate={values => {
-               const errors = {};
-               if (!values.name) {
-                  errors.name = 'Required';
-               }
-               return errors;
-            }}
-            onSubmit={(values, { setSubmitting }) => {
-               setTimeout(() => {
-                  console.log(values);
-                  setSubmitting(false);
-               }, 400);
+            initialValues={details}
+            validationSchema={ProductSchema}
+            onSubmit={values => {
+               console.log(values)
             }}
          >
-            {({ isSubmitting }) => (
+            {({ errors, touched }) => (
                <Form className="form">
                   <label className="form__label" htmlFor="name">Name</label>
                   <Field
                      className="form__name"
                      name="name"
                   />
-                  <ErrorMessage name="name" component="div" />
+                  {errors.name && touched.name && (
+                     <ErrorMessage name="name" component="span" className="error-message" />
+                  )}
 
                   <label className="form__label" htmlFor="price">Price</label>
                   <Field
@@ -60,15 +85,8 @@ function EditProduct() {
                      name="type"
                   />
 
-
-                  {/* <Field type="text" name="email" />
-                     <ErrorMessage name="email" component="div" />
-                     <Field type="password" name="password" />
-                     <ErrorMessage name="password" component="div" /> */}
-
                   <button
                      type="submit"
-                     disabled={isSubmitting}
                      className="btn btn--primary mt-1 form__btn"
                   >
                      Submit

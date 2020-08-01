@@ -13,7 +13,7 @@ const ViewProduct = () => {
    useEffect(() => {
       getProduct(id)
          .then(data => setProduct(data))
-   }, [])
+   }, [id]);
 
    const { name, price, sellVolume, image } = product;
 
