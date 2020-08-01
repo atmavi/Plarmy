@@ -268,6 +268,9 @@ ml4 {
   display: flex;
   justify-content: space-between; }
 
+.add-product {
+  padding: 4rem 8rem; }
+
 .login__container {
   display: flex;
   justify-content: flex-end;
@@ -440,3 +443,7 @@ form > input[type="text"] {
     color: #221f1f;
     font-size: .8rem;
     margin-top: 1rem; }
+
+.error-message {
+  color: #ff6347;
+  font-size: .7rem; }
