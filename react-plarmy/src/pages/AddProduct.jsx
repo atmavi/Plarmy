@@ -20,7 +20,6 @@ function AddProduct() {
             }}
             validationSchema={ProductSchema}
             onSubmit={values => {
-               console.log(values);
                addProduct(values)
                   .then(res => alert('Success'))
             }}
