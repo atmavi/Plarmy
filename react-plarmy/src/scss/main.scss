@@ -13,6 +13,7 @@
 @import './layout/Products';
 @import './layout/view-product';
 @import './layout/footer';
+@import './layout/add-product';
 
 @import './pages/landing';
 @import './pages/login';
@@ -24,3 +25,4 @@
 @import './components/quantity-btns';
 @import './components/footer';
 @import './components/form';
+@import './components/err-message';
