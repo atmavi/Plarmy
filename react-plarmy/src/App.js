@@ -18,6 +18,7 @@ import Products from './pages/Products';
 import ViewProduct from './pages/ViewProduct';
 import EditProduct from './pages/EditProduct';
 import AddProduct from './pages/AddProduct';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route path="/products">
             <Products />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </Router>

@@ -22,6 +22,7 @@ function AddProduct() {
             onSubmit={values => {
                addProduct(values)
                   .then(res => alert('Success'))
+                  .catch(err => console.log(err))
             }}
          >
             {({ errors, touched }) => (

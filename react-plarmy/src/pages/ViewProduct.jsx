@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 
 import { getProduct } from '../services/products';
 import QuantityBtns from '../components/QuatityBtns';
+import NotFound from './NotFound';
+// import NotFound from './NotFound';
 
 
 const ViewProduct = () => {
@@ -12,12 +14,17 @@ const ViewProduct = () => {
 
    useEffect(() => {
       getProduct(id)
-         .then(data => setProduct(data))
+         .then(data => {
+            setProduct(data);
+         })
+         .catch(err => console.log(err))
    }, [id]);
+
+   console.log('>>', product)
 
    const { name, price, sellVolume, image } = product;
 
-   return (
+   return product.data === null ? <NotFound /> : (
       <div className="view-product">
          <div className="view-product__img-wrapper">
             <img
@@ -44,7 +51,7 @@ const ViewProduct = () => {
             <button className="btn btn--primary mt-2">Add to Cart</button>
          </div>
       </div>
-   );
+   )
 }
 
 export default ViewProduct;   

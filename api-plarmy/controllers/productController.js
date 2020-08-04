@@ -14,7 +14,7 @@ exports.list = (req, res) => {
 exports.add = (req, res) => {
    Product.create(req.body, (err, newProduct) => {
       if (err) {
-         console.log(err);
+         res.json(err)
       } else {
          console.log(newProduct);
          res.json(newProduct)
@@ -24,12 +24,16 @@ exports.add = (req, res) => {
 
 exports.detail = (req, res) => {
    Product.findById(req.params.id, (err, product) => {
-      res.json(err ? "Something went wrong" : product);
+      if (err) {
+         console.log(err)
+      } else {
+         res.json(product)
+      }
    });
 };
 
 exports.update = (req, res) => {
-   Product.findByIdAndUpdate(req.params.id, {}, (err, product) => {
+   Product.findByIdAndUpdate(req.params.id, req.body, (err, product) => {
       res.json(err ? "Something went wrong" : product);
    });
 };
