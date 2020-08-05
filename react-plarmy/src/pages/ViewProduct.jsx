@@ -3,8 +3,6 @@ import { useParams, Redirect } from 'react-router-dom';
 
 import { getProduct } from '../services/products';
 import QuantityBtns from '../components/QuatityBtns';
-import NotFound from './NotFound';
-// import NotFound from './NotFound';
 
 
 const ViewProduct = () => {
@@ -15,16 +13,15 @@ const ViewProduct = () => {
    useEffect(() => {
       getProduct(id)
          .then(data => {
+            console.log(data)
             setProduct(data);
          })
          .catch(err => console.log(err))
    }, [id]);
 
-   console.log('>>', product)
-
    const { name, price, sellVolume, image } = product;
 
-   return product.data === null ? <NotFound /> : (
+   return (
       <div className="view-product">
          <div className="view-product__img-wrapper">
             <img

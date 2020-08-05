@@ -12,7 +12,7 @@ export const getAllProducts = () => {
 export const getProduct = id => {
    const res = axios.get(url + '/products/' + id)
       .then(res => {
-         return res.status === 200 ? res : res;
+         return res.data;
       })
       .catch(err => err)
    return res;
