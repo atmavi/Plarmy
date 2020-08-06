@@ -25,7 +25,7 @@ exports.add = (req, res) => {
 exports.detail = (req, res) => {
    Product.findById(req.params.id, (err, product) => {
       if (err) {
-         console.log(err)
+         res.json(err)
       } else {
          res.json(product)
       }

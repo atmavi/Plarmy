@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import { ProductSchema } from '../schema/product';
@@ -10,13 +10,25 @@ import NotFound from './NotFound';
 
 
 function EditProduct() {
+   const history = useHistory();
    let { id } = useParams();
    const [details, setDetails] = useState({});
 
    useEffect(() => {
       getProduct(id)
-         .then(data => setDetails(data))
-   }, [id]);
+         .then(data => {
+            ProductSchema.isValid(data)
+               .then(valid => {
+                  if (valid) {
+                     setDetails(data);
+                     return;
+                  }
+
+                  history.push('/*')
+               })
+         })
+         .catch(err => console.log('No product found.', err))
+   }, [id, history]);
 
 
    return !details ? <NotFound /> : (

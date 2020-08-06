@@ -14,7 +14,9 @@ export const getProduct = id => {
       .then(res => {
          return res.data;
       })
-      .catch(err => err)
+      .catch(err => {
+         return err;
+      })
    return res;
 }
 

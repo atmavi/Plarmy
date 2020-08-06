@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
+
 
 import { getProduct } from '../services/products';
 import QuantityBtns from '../components/QuatityBtns';
 
+import { ProductSchema } from '../schema/product';
+
 
 const ViewProduct = () => {
+   const history = useHistory();
    let { id } = useParams();
 
    const [product, setProduct] = useState({});
@@ -13,11 +17,18 @@ const ViewProduct = () => {
    useEffect(() => {
       getProduct(id)
          .then(data => {
-            console.log(data)
-            setProduct(data);
+            ProductSchema.isValid(data)
+               .then(valid => {
+                  if (valid) {
+                     setProduct(data);
+                     return;
+                  }
+
+                  history.push('/*')
+               })
          })
-         .catch(err => console.log(err))
-   }, [id]);
+         .catch(err => console.log('No product found.', err))
+   }, [id, history]);
 
    const { name, price, sellVolume, image } = product;
 
