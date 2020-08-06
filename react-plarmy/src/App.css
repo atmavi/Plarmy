@@ -301,6 +301,15 @@ ml4 {
   display: flex;
   flex-direction: column; }
 
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh; }
+  .not-found__header {
+    font-size: 3rem; }
+
 .btn {
   padding: .5rem 1rem;
   border: none;
@@ -446,4 +455,5 @@ form > input[type="text"] {
 
 .error-message {
   color: #ff6347;
-  font-size: .7rem; }
+  font-size: .7rem;
+  margin-top: .5rem; }
