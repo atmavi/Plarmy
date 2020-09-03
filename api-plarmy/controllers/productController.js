@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const product = require('../models/product');
 
 
 exports.home = (req, res) => {
@@ -6,36 +7,31 @@ exports.home = (req, res) => {
 };
 
 exports.list = (req, res) => {
-   Product.find({}, (err, products) => {
-      res.json(err ? "Something went wrong" : products);
-   });
+   Product.find()
+      .then(products => res.json(products))
+      .catch(err => res.json(`Error: ${err}`))
 };
 
 exports.add = (req, res) => {
-   Product.create(req.body, (err, newProduct) => {
-      if (err) {
-         res.json(err)
-      } else {
-         console.log(newProduct);
-         res.json(newProduct)
-      }
-   });
+   Product.create(req.body)
+      .then(() => res.json('New product has been added'))
+      .catch(err => res.status(400).json(`Error: ${err}`))
 };
 
 exports.detail = (req, res) => {
-   Product.findById(req.params.id, (err, product) => {
-      if (err) {
-         res.json(err)
-      } else {
-         res.json(product)
-      }
-   });
+   Product.findById(req.params.id)
+      .then(product => res.json(product))
+      .catch(err => res.status(400).json(`Error: ${err}`))
 };
 
 exports.update = (req, res) => {
-   Product.findByIdAndUpdate(req.params.id, req.body, (err, product) => {
-      res.json(err ? "Something went wrong" : product);
-   });
+   // Product.findByIdAndUpdate(req.params.id, req.body, (err, product) => {
+   //    res.json(err ? "Something went wrong" : product);
+   // });
+
+   Product.findByIdAndUpdate(req.params.id, req.body)
+      .then(() => res.json("Product successfully updated"))
+      .catch(err => res.status(400).json(`Error: ${err}`))
 };
 
 exports.delete = (req, res) => {

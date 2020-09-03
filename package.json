@@ -20,8 +20,15 @@
   "homepage": "https://github.com/atmavi/Plarmy#readme",
   "devDependencies": {},
   "dependencies": {
+    "express-session": "^1.17.1",
     "formik": "^2.1.5",
     "npm-run-all": "^4.1.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "yup": "^0.29.2"
   }
 }

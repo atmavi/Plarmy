@@ -445,6 +445,10 @@ form > input[type="text"] {
     .form input:focus {
       box-shadow: 3px 3px 0 rgba(0, 201, 85, 0.3);
       outline: none; }
+    .form input:valid {
+      border-bottom: 4px solid #00C955; }
+    .form input:invalid {
+      border-bottom: 4px solid #ff6347; }
   .form__btn {
     font-size: 1.2rem; }
   .form__label {
