@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://192.168.254.104:4000/api";
+const url = "http://192.168.254.102:4000/api";
 
 export const getAllProducts = () => {
   const res = axios

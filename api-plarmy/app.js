@@ -59,13 +59,18 @@ app.post("/api/register", (req, res) => {
     }
 
     passport.authenticate("local")(req, res, () => {
-      res.json("A new user has been addeddddd.");
+      res.json("A new user has been added.");
     });
   });
 });
 
 app.post("/api/login", passport.authenticate("local"), (req, res) => {
-  // res.send(req.user);
+  res.send(req.user);
+});
+
+//test... will be deleted soon
+app.get("/api/user", (req, res) => {
+  res.send(req.user ? req.user : "No logged user");
 });
 
 mongoose
