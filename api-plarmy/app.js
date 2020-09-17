@@ -68,11 +68,6 @@ app.post("/api/login", passport.authenticate("local"), (req, res) => {
   res.send(req.user);
 });
 
-//test... will be deleted soon
-app.get("/api/user", (req, res) => {
-  res.send(req.user ? req.user : "No logged user");
-});
-
 mongoose
   .connect("mongodb://localhost/api-plarmy", {
     useNewUrlParser: true,
