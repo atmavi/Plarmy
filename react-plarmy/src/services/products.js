@@ -4,9 +4,13 @@ const url = "http://192.168.254.102:4000/api";
 
 export const getAllProducts = () => {
   const res = axios
-    .get(url + "/products")
+    .get(url + "/products", {
+      headers: {
+        'Authorization': `Bearer ${TOKEN}`,
+      },
+    })
     .then((res) => res.data)
-    .catch((err) => err);
+    .catch((err) => console.log(err));
   return res;
 };
 
