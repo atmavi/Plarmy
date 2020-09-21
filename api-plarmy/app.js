@@ -3,9 +3,13 @@ const express = require("express"),
   passport = require("passport"),
   LocalStrategy = require("passport-local");
 
+const jwt = require("jsonwebtoken");
 const app = express();
 
 require("dotenv").config();
+
+//THIS SHOULD BE DELETED SOON=========================================
+let refreshTokens = [];
 
 //MODELS
 const Product = require("./models/product");
@@ -46,8 +50,7 @@ app.use((req, res, next) => {
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "Content-Type",
-    "Authorization"
+    "Content-Type, Authorization"
   );
   next();
 });
@@ -69,7 +72,19 @@ app.post("/api/register", (req, res) => {
 });
 
 app.post("/api/login", passport.authenticate("local"), (req, res) => {
-  res.send(req.user);
+  const username = req.body.username;
+  const user = { name: username };
+
+  const accessToken = generateAccessToken(user);
+  const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET);
+  refreshTokens.push(refreshToken);
+  res.json({ accessToken: accessToken, refreshToken: refreshToken });
+
+  function generateAccessToken(user) {
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: "24h",
+    });
+  }
 });
 
 mongoose
