@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
+import { userLogin } from '../services/auth';
 
 function Login() {
    const [username, setUsername] = useState('');
@@ -16,9 +17,12 @@ function Login() {
    const handleSubmit = e => {
       e.preventDefault();
       const data = { username, password };
-      axios.post('http://192.168.254.105:4000/api/login', data)
-         .then(res => console.log(res))
-         .catch(err => console.log(err))
+
+      userLogin(data)
+         .then(token => {
+            window.localStorage.setItem('accessToken', token.accessToken);
+            window.localStorage.setItem('refreshToken', token.refreshToken);
+         })
    }
    return (
       <div className="login__container">
