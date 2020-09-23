@@ -3,10 +3,11 @@ import axios from "axios";
 const url = "http://192.168.254.102:4000/api";
 
 export const getAllProducts = () => {
+  let accessToken = window.localStorage.getItem('accessToken');
   const res = axios
     .get(url + "/products", {
       headers: {
-        'Authorization': `Bearer ${TOKEN}`,
+        'Authorization': `Bearer ${accessToken}`,
       },
     })
     .then((res) => res.data)
