@@ -8,7 +8,6 @@ function authenticateToken(req, res, next) {
   if (token == null) return res.sendStatus(401);
 
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    console.log(err);
     if (err) return res.sendStatus(403);
     req.user = user;
     next();
@@ -18,7 +17,7 @@ function authenticateToken(req, res, next) {
 router.get("/", product_controller.home);
 
 //GET ALL PRODUCTS
-router.get("/products", authenticateToken, product_controller.list);
+router.get("/products", product_controller.list);
 
 //CREATE PRODUCTS
 router.post("/products", product_controller.add);
