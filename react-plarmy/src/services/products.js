@@ -1,16 +1,17 @@
 import axios from "axios";
 
-const url = "localhost:4000/api";
+const url = "http://localhost:4000/api";
 
 export const getAllProducts = () => {
-  let accessToken = window.localStorage.getItem('accessToken');
+  let accessToken = window.localStorage.getItem("accessToken");
   const res = axios
     .get(url + "/products", {
       headers: {
-        'Authorization': `Bearer ${accessToken}`,
+        'Authorization': `Bearer ${accessToken}`
       },
     })
     .then((res) => res.data)
+    .catch((err) => err);
   return res;
 };
 
