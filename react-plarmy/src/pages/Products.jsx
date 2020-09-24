@@ -11,13 +11,13 @@ const Products = () => {
     getAllProducts().then((data) => setProducts(data));
   }, []);
 
-  return (
+  return products && products.length > 0 ? (
     <div className="products">
       {products.map((product) => (
         <Product product={product} key={product._id} />
       ))}
     </div>
-  );
+  ) : <h2>There's no product to show</h2>;
 };
 
 export default Products;
