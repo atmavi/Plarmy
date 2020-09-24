@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://192.168.254.102:4000/api";
+const url = "localhost:4000/api";
 
 export const getAllProducts = () => {
   let accessToken = window.localStorage.getItem('accessToken');
@@ -11,7 +11,6 @@ export const getAllProducts = () => {
       },
     })
     .then((res) => res.data)
-    .catch((err) => console.log(err));
   return res;
 };
 
